@@ -1,0 +1,76 @@
+<html lang="PL">
+
+<head>
+    <title>Zadanie z obiektami.</title>
+    <meta name="Author" content="Artur Nazim 3C">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="arturHotel">
+            <div id='titles'>Hotel Artur</div>
+            <div id="im. Artura Batorego"></div>
+            <div id="im. Artura Batorego1"></div>
+        </div>
+        <div class="damianHotel">
+            <div id='titles'>Hotel Damian</div>
+            <div id="im. Damiana Wyspiańskiego"></div>
+
+        </div>
+        <div class="jakubHotel">
+            <div id='titles'>Hotel Jakub</div>
+            <div id="im. Jakuba Olgierta"></div>
+
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function hotel(name, rooms, booked, stars, price) {
+        this.name = name;
+        this.rooms = rooms;
+        this.booked = booked;
+        this.stars = stars;
+        this.price = price;
+
+        this.free_rooms = function () {
+            return this.rooms - this.booked;
+        }
+    }
+
+    let hotelArtur = new hotel('im. Artura Batorego', 56, 21, 3, 180);
+    let hotelDamian = new hotel('im. Damiana Wyspiańskiego', 120, 79, 6, 350);
+    let hotelJakub = new hotel('im. Jakuba Olgierta', 34, 12, 1, 20);
+
+    hotelArtur.basen = true;
+    hotelArtur.silownia = false;
+
+    hotelDamian.basen = true;
+    hotelDamian.silownia = true;
+
+    hotelJakub.basen = false;
+    hotelJakub.silownia = false;
+
+    let hotele = [hotelArtur, hotelDamian, hotelJakub];
+
+    for (let i = 0; i < hotele.length; i++) {
+        let stars = "";
+        for (let j = 0; j < hotele[i].stars; j++) {
+            stars += "⭐";
+        }
+        document.getElementById(hotele[i].name).innerHTML = stars + "<br><br>" + '<span class="price">' + hotele[
+                i]
+            .price + "zł / doba" + '</span>';
+
+        document.getElementById(hotele[i].name).onmouseover = function () {
+            document.getElementById(hotele[i].name + "1").innerHTML = "<br><br>Pokoje: " + hotele[i].rooms;
+        }
+    }
+</script>

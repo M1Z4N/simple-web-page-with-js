@@ -1,0 +1,62 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 30px;
+    grid-template-areas:
+        "arturHotel damianHotel jakubHotel";
+    color: white;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    margin-top: 10vh;
+}
+
+.arturHotel {
+    grid-area: arturHotel;
+    height: 20vh;
+    width: 30vw;
+    background-color: black;
+    border-radius: 20px;
+
+}
+
+.damianHotel {
+    grid-area: damianHotel;
+    height: 20vh;
+    width: 30vw;
+    background-color: black;
+    border-radius: 20px;
+}
+
+.jakubHotel {
+    grid-area: jakubHotel;
+    height: 20vh;
+    width: 30vw;
+    background-color: black;
+    border-radius: 20px;
+}
+
+#titles {
+    color: white;
+    font-size: 36px;
+    margin: 20px;
+    font-family: 'Righteous', cursive;
+}
+
+body {
+    background-image: url('backgroundl.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 90%;
+}
+
+.price {
+    font-family: 'Righteous', cursive;
+}
+
+.arturHotel:hover {
+    height: auto;
+    padding-bottom: 2vh;
+}
